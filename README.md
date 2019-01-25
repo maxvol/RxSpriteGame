@@ -1,6 +1,8 @@
 # RxSpriteGame
 A demo project for RxSpriteKit (https://github.com/maxvol/RxSpriteGame)
 
+A brief Cartage manual - https://medium.com/@maxim.volgin/efficient-carthage-5d7dd0a5f429
+
 Project setup:
 
 1. In target `Build Settings`->`Framework Search Paths` add lines:

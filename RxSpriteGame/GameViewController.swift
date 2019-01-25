@@ -17,10 +17,6 @@ import RxSpriteKit
 
 class GameViewController: UIViewController {
     
-    // CUSTOM CODE ->
-    private let disposeBag = DisposeBag()
-    // CUSTOM CODE <-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         

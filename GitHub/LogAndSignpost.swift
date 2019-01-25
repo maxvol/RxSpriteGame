@@ -18,6 +18,3 @@ struct Log {
     static let sk = OSLog(subsystem: subsystem, category: "SK")
     
 }
-
-
-// os_log("touch: %@", log: Log.ui, type: .debug, "\(touch)")

@@ -1,5 +1,5 @@
 # RxSpriteGame
-A demo project for RxSpriteKit (https://github.com/maxvol/RxSpriteGame)
+A demo project for RxSpriteKit (https://github.com/maxvol/RxSpriteKit)
 
 A brief Carthage manual - https://medium.com/@maxim.volgin/efficient-carthage-5d7dd0a5f429
 

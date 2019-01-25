@@ -8,11 +8,11 @@
 
 import SpriteKit
 import GameplayKit
-// ...
+// CUSTOM CODE ->
 import os.log
 import RxSwift
 import RxSpriteKit
-// ...
+// CUSTOM CODE <-
 
 class GameScene: SKScene {
     
@@ -23,18 +23,46 @@ class GameScene: SKScene {
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
-    // ...
+    // CUSTOM CODE ->
     private let disposeBag = DisposeBag()
     private let spinnyCategory: UInt32 = 1 << 0
     private let labelCategory: UInt32 = 1 << 1
-    // ...
+    // CUSTOM CODE <-
     
     override func sceneDidLoad() {
         
-        // ...
-        
-//        self.physicsWorld.contactDelegate = self
-        
+        // CUSTOM CODE ->
+        self
+            .rx
+            .update
+            .subscribe { [unowned self] event in
+                switch event {
+                case .next(let update):
+                    let currentTime = update.currentTime
+                    // Called before each frame is rendered
+                    
+                    // Initialize _lastUpdateTime if it has not already been
+                    if (self.lastUpdateTime == 0) {
+                        self.lastUpdateTime = currentTime
+                    }
+                    
+                    // Calculate time since last update
+                    let dt = currentTime - self.lastUpdateTime
+                    
+                    // Update entities
+                    for entity in self.entities {
+                        entity.update(deltaTime: dt)
+                    }
+                    
+                    self.lastUpdateTime = currentTime
+                    break
+                default:
+                    break
+                }
+            }
+            .disposed(by: disposeBag)
+        // OLD SCHOOL:
+        // self.physicsWorld.contactDelegate = self
         self
             .physicsWorld
             .rx
@@ -49,7 +77,6 @@ class GameScene: SKScene {
                 }
             }
             .disposed(by: disposeBag)
-        
         self
             .physicsWorld
             .rx
@@ -64,9 +91,7 @@ class GameScene: SKScene {
                 }
             }
             .disposed(by: disposeBag)
-
-        
-        // ...
+        // CUSTOM CODE <-
         
         self.lastUpdateTime = 0
         
@@ -75,19 +100,15 @@ class GameScene: SKScene {
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
-            
-            // ...
-            
+            // CUSTOM CODE ->
             label.physicsBody = SKPhysicsBody(rectangleOf: label.frame.size)
             label.physicsBody?.isDynamic = true
             label.physicsBody?.affectedByGravity = false
             label.physicsBody?.usesPreciseCollisionDetection = true
-            
             label.physicsBody?.categoryBitMask = self.labelCategory
             label.physicsBody?.collisionBitMask = self.spinnyCategory
             label.physicsBody?.contactTestBitMask = self.spinnyCategory
-            
-            // ...
+            // CUSTOM CODE <-
         }
         
         // Create shape node to use during mouse interaction
@@ -101,17 +122,15 @@ class GameScene: SKScene {
             spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
                                               SKAction.fadeOut(withDuration: 0.5),
                                               SKAction.removeFromParent()]))
-            // ...
-            
+            // CUSTOM CODE ->
             spinnyNode.physicsBody = SKPhysicsBody(rectangleOf: spinnyNode.frame.size)
             spinnyNode.physicsBody?.isDynamic = true
             spinnyNode.physicsBody?.affectedByGravity = false
             spinnyNode.physicsBody?.usesPreciseCollisionDetection = true
-
             spinnyNode.physicsBody?.categoryBitMask = self.spinnyCategory
             spinnyNode.physicsBody?.collisionBitMask = self.labelCategory | self.spinnyCategory
             spinnyNode.physicsBody?.contactTestBitMask = self.labelCategory | self.spinnyCategory
-            // ...
+            // CUSTOM CODE <-
         }
     }
     
@@ -160,23 +179,23 @@ class GameScene: SKScene {
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
     
-    
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        
-        // Initialize _lastUpdateTime if it has not already been
-        if (self.lastUpdateTime == 0) {
-            self.lastUpdateTime = currentTime
-        }
-        
-        // Calculate time since last update
-        let dt = currentTime - self.lastUpdateTime
-        
-        // Update entities
-        for entity in self.entities {
-            entity.update(deltaTime: dt)
-        }
-        
-        self.lastUpdateTime = currentTime
-    }
+// MARK: - OLD SCHOOL
+//    override func update(_ currentTime: TimeInterval) {
+//        // Called before each frame is rendered
+//
+//        // Initialize _lastUpdateTime if it has not already been
+//        if (self.lastUpdateTime == 0) {
+//            self.lastUpdateTime = currentTime
+//        }
+//
+//        // Calculate time since last update
+//        let dt = currentTime - self.lastUpdateTime
+//
+//        // Update entities
+//        for entity in self.entities {
+//            entity.update(deltaTime: dt)
+//        }
+//
+//        self.lastUpdateTime = currentTime
+//    }
 }

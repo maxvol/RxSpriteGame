@@ -9,8 +9,17 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+// CUSTOM CODE ->
+import os.log
+import RxSwift
+import RxSpriteKit
+// CUSTOM CODE <-
 
 class GameViewController: UIViewController {
+    
+    // CUSTOM CODE ->
+    private let disposeBag = DisposeBag()
+    // CUSTOM CODE <-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +39,19 @@ class GameViewController: UIViewController {
                 sceneNode.scaleMode = .aspectFill
                 
                 // Present the scene
-                if let view = self.view as! SKView? {
+                if var view = self.view as! SKView? {
                     view.presentScene(sceneNode)
                     
                     view.ignoresSiblingOrder = true
                     
                     view.showsFPS = true
                     view.showsNodeCount = true
+                    
+                    // CUSTOM CODE ->
+                    // OLD SCHOOL
+                    // view.delegate = self
+                    view.rx.shouldRenderAtTime = { (view, time) -> Bool in true }
+                    // CUSTOM CODE <-
                 }
             }
         }

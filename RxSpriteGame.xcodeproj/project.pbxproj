@@ -22,6 +22,7 @@
 		9498ED3B21FB90FC001FEA14 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498ED3921FB90FC001FEA14 /* RxSwift.framework */; };
 		9498ED3C21FB90FC001FEA14 /* RxSpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498ED3A21FB90FC001FEA14 /* RxSpriteKit.framework */; };
 		9498ED4021FB9360001FEA14 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498ED3F21FB9360001FEA14 /* RxCocoa.framework */; };
+		9498ED4221FB9C06001FEA14 /* OldSchoolSKViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9498ED4121FB9C06001FEA14 /* OldSchoolSKViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		9498ED3921FB90FC001FEA14 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		9498ED3A21FB90FC001FEA14 /* RxSpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSpriteKit.framework; path = ../../Carthage/Build/iOS/RxSpriteKit.framework; sourceTree = "<group>"; };
 		9498ED3F21FB9360001FEA14 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		9498ED4121FB9C06001FEA14 /* OldSchoolSKViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldSchoolSKViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				9498ED3121FB8B9E001FEA14 /* OldSchoolSKPhysicsContactDelegate.swift */,
+				9498ED4121FB9C06001FEA14 /* OldSchoolSKViewDelegate.swift */,
 			);
 			path = OldSchool;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9498ED0421FB8776001FEA14 /* GameScene.swift in Sources */,
+				9498ED4221FB9C06001FEA14 /* OldSchoolSKViewDelegate.swift in Sources */,
 				9498ED3221FB8B9E001FEA14 /* OldSchoolSKPhysicsContactDelegate.swift in Sources */,
 				9498ED0621FB8776001FEA14 /* GameViewController.swift in Sources */,
 				9498ED3421FB8C90001FEA14 /* LogAndSignpost.swift in Sources */,

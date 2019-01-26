@@ -132,8 +132,7 @@ class GameScene: SKScene {
             spinnyNode.physicsBody?.contactTestBitMask = self.labelCategory | self.spinnyCategory
             // CUSTOM CODE <-
         }
-    }
-    
+    }    
     
     func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {

@@ -1,5 +1,5 @@
 //
-//  LogAndSignpost.swift
+//  Log.swift
 //  RxSpriteGame
 //
 //  Created by Maxim Volgin on 25/01/2019.
@@ -18,3 +18,4 @@ struct Log {
     static let sk = OSLog(subsystem: subsystem, category: "SK")
     
 }
+

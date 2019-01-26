@@ -18,7 +18,7 @@
 		9498ED1921FB877B001FEA14 /* RxSpriteGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9498ED1821FB877B001FEA14 /* RxSpriteGameTests.swift */; };
 		9498ED2421FB877C001FEA14 /* RxSpriteGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9498ED2321FB877C001FEA14 /* RxSpriteGameUITests.swift */; };
 		9498ED3221FB8B9E001FEA14 /* OldSchoolSKPhysicsContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9498ED3121FB8B9E001FEA14 /* OldSchoolSKPhysicsContactDelegate.swift */; };
-		9498ED3421FB8C90001FEA14 /* LogAndSignpost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9498ED3321FB8C90001FEA14 /* LogAndSignpost.swift */; };
+		9498ED3421FB8C90001FEA14 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9498ED3321FB8C90001FEA14 /* Log.swift */; };
 		9498ED3B21FB90FC001FEA14 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498ED3921FB90FC001FEA14 /* RxSwift.framework */; };
 		9498ED3C21FB90FC001FEA14 /* RxSpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498ED3A21FB90FC001FEA14 /* RxSpriteKit.framework */; };
 		9498ED4021FB9360001FEA14 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498ED3F21FB9360001FEA14 /* RxCocoa.framework */; };
@@ -60,7 +60,7 @@
 		9498ED2321FB877C001FEA14 /* RxSpriteGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSpriteGameUITests.swift; sourceTree = "<group>"; };
 		9498ED2521FB877C001FEA14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9498ED3121FB8B9E001FEA14 /* OldSchoolSKPhysicsContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldSchoolSKPhysicsContactDelegate.swift; sourceTree = "<group>"; };
-		9498ED3321FB8C90001FEA14 /* LogAndSignpost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogAndSignpost.swift; sourceTree = "<group>"; };
+		9498ED3321FB8C90001FEA14 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		9498ED3521FB902A001FEA14 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		9498ED3621FB902A001FEA14 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		9498ED3921FB90FC001FEA14 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -102,7 +102,6 @@
 			children = (
 				9498ED3621FB902A001FEA14 /* Cartfile */,
 				9498ED3521FB902A001FEA14 /* Cartfile.resolved */,
-				9498ED3E21FB92F2001FEA14 /* GitHub */,
 				9498ED3D21FB92DD001FEA14 /* OldSchool */,
 				9498ECFC21FB8775001FEA14 /* RxSpriteGame */,
 				9498ED1721FB877B001FEA14 /* RxSpriteGameTests */,
@@ -125,6 +124,7 @@
 		9498ECFC21FB8775001FEA14 /* RxSpriteGame */ = {
 			isa = PBXGroup;
 			children = (
+				9498ED3321FB8C90001FEA14 /* Log.swift */,
 				9498ECFD21FB8775001FEA14 /* AppDelegate.swift */,
 				9498ECFF21FB8775001FEA14 /* GameScene.sks */,
 				9498ED0121FB8775001FEA14 /* Actions.sks */,
@@ -173,14 +173,6 @@
 				9498ED4121FB9C06001FEA14 /* OldSchoolSKViewDelegate.swift */,
 			);
 			path = OldSchool;
-			sourceTree = "<group>";
-		};
-		9498ED3E21FB92F2001FEA14 /* GitHub */ = {
-			isa = PBXGroup;
-			children = (
-				9498ED3321FB8C90001FEA14 /* LogAndSignpost.swift */,
-			);
-			path = GitHub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,7 +337,7 @@
 				9498ED4221FB9C06001FEA14 /* OldSchoolSKViewDelegate.swift in Sources */,
 				9498ED3221FB8B9E001FEA14 /* OldSchoolSKPhysicsContactDelegate.swift in Sources */,
 				9498ED0621FB8776001FEA14 /* GameViewController.swift in Sources */,
-				9498ED3421FB8C90001FEA14 /* LogAndSignpost.swift in Sources */,
+				9498ED3421FB8C90001FEA14 /* Log.swift in Sources */,
 				9498ECFE21FB8775001FEA14 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
